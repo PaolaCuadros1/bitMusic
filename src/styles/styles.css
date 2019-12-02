@@ -101,27 +101,27 @@ a{
   margin-top: 5%;
 }
 
-.form-group{
- color: white;
+.form-group-1{
+ color: white !important;
 }
 
-.form-control{
-  width: 50%;
-  border: none;
-  border-bottom: 2px solid white;
-  background-color: black;
-  color: white;
+.form-control-1{
+  width: 50% !important;
+  border: none !important;
+  border-bottom: 2px solid white !important;
+  background-color: black !important;
+  color: white !important;
 }
 
-.form-control:focus {
-  background-color: lightgray;
+.form-control-1:focus {
+  background-color: lightgray !important;
 }
 
-form{
-  margin-left: 200px;
+.form-signUp{
+  margin-left: 200px !important;
 }
 #boton-form{
-  margin-left: 34%;
+  margin-left: 28%;
 }
 .nav-link.active {
   background-color: black !important;
