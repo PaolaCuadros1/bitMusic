@@ -1,0 +1,9 @@
+.btn-listened{
+    border-bottom: 2px white solid;
+    background-color: black;
+}
+
+.div-listened{
+border-bottom: 10px solid rgba(0,0,0,.125);
+border-right: 10px solid rgba(0,0,0,.125);
+}
