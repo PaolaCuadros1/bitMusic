@@ -8,11 +8,13 @@ import { MenuComponent } from './components/menu/menu.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AccountComponent } from './components/account/account.component';
 import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'main', component: MainComponent},
   {path: 'login', component: LoginComponent},
   {path: 'account', component: AccountComponent},
+  {path: 'signUp', component: SignUpComponent}
 ];
 
 @NgModule({
@@ -21,7 +23,8 @@ const appRoutes: Routes = [
     MainComponent,
     MenuComponent,
     AccountComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
