@@ -1,0 +1,52 @@
+.col {
+    float: left;
+}
+.row {
+    overflow: auto;
+}
+footer {
+    display: block;
+    margin-top: 60px;
+    padding: 10px;
+    text-align: center;
+    height: 100%;
+}
+
+.icon-twitter,
+.icon-facebook,
+.icon-instagram {
+    color: white;
+    font-size: 20px;
+}
+
+.icon-twitter:hover,
+.icon-facebook:hover,
+.icon-instagram:hover {
+    color: rgb(114, 230, 250);
+    cursor: pointer;
+}
+
+.legal{
+/* float: left; */
+width: 33.3%;
+ font-size: 15px;
+ color: white;
+/*  margin-left:5px */
+}
+.flomasescuchado{
+    width: 33.3%;
+  /*   float: center; */
+
+}
+.redes{
+ 
+    width: 33.3%;
+    text-align: right;
+    align-content: center;
+   /*  float:right; */
+/*    margin-left: 10px; */
+}
+
+
+
+
