@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+}
+
+a{
+  color: #8904B1 !important;
+}
+
+.text-main {
+  z-index: 2;
+  color: white;
+  top: 8em;
+  position: relative;
+  margin-left: 10%;
+}
+
+.text-main h1 {
+  font-size: 8.25em;
+  line-height: 0.85;
+  text-align: right;
+
+}
+
+.main-image {
+  width: 90%;
+  border-radius: 10%;
+}
+
+.nav-item{
+  margin-right: 4%;
+}
+
+.name-menu{
+  color: white !important;
+  background-color: #2E2E2E;
+}
+
+.name-menu:hover{
+  color: #8904B1;
+}
+
+.music-image{
+  margin-right: 20px;
+}
+
+.music-list{
+  background-color: black;
+  color: white;
+}
+
+.music-gender {
+  display: flex;
+  justify-content: space-around;
+}
+
+.music-gender > div {
+  width: 20%;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.img-gender{
+  background-color: #424242;
+  color: white;
+  text-align: center;
+}
+
+.info-client{
+  margin-top: 5%;
+}

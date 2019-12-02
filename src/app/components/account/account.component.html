@@ -1,0 +1,119 @@
+<div class="container">
+  <ngb-tabset>
+    <ngb-tab title="Lo mas escuchado" class="text">
+      <ng-template ngbTabContent>
+        <div class="info-client">
+          <div class="row">
+            <div class="col-6">
+              <table style="width: 100%; text-align: center;">
+                <tr>
+                  <td> <img src="/assets/images/Logo5.png" alt="" srcset=""> </td>
+                </tr>
+                <tr>
+                  <td>
+                    <video id="videoBitMusic" src="/assets/audios/ImagineDragonsOnTopOfTheWorld.mp3" controls></video>
+                  </td>
+                </tr>
+              </table>
+
+            </div>
+            <div class="col-6">
+              <div class="list-group">
+                <button onclick="chageSong('FooFightersThePretender');" type="button"
+                  class="list-group-item list-group-item-action music-list">
+                  <span class="music-image"><img src="/assets/images/music/pretender.jpg" width="80" height="80" alt=""
+                      srcset=""></span> <span>Foo Fighters - The Pretender</span>
+                </button>
+                <button onclick="chageSong('FooFightersThePretender');" type="button"
+                  class="list-group-item list-group-item-action music-list">
+                  <span class="music-image"><img src="/assets/images/music/without-image.png" width="80" height="80"
+                      alt="" srcset=""></span> <span>Imagine Dragons - On Top Of The World</span>
+                </button>
+                <button onclick="chageSong('FooFightersThePretender');" type="button"
+                  class="list-group-item list-group-item-action music-list">
+                  <span class="music-image"><img src="/assets/images/music/without-image.png" width="80" height="80"
+                      alt="" srcset=""></span> <span>Interpol - All The Rage Back Home</span>
+                </button>
+                <button onclick="chageSong('FooFightersThePretender');" type="button"
+                  class="list-group-item list-group-item-action music-list">
+                  <span class="music-image"><img src="/assets/images/music/without-image.png" width="80" height="80"
+                      alt="" srcset=""></span> <span>The Strokes - You Only Live Once</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Generos" class="text">
+      <ng-template ngbTabContent>
+        <div class="info-client">
+          <div class="music-gender">
+            <div class="card img-gender">
+              <img src="/assets/images/music/rock-espanol.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Rock en español</h5>
+              </div>
+            </div>
+            <div class="card img-gender">
+              <img src="/assets/images/music/rock-clasico.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Rock clasico</h5>
+              </div>
+            </div>
+            <div class="card img-gender">
+              <img src="/assets/images/music/pop-latino.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Pop latino</h5>
+              </div>
+            </div>
+            <div class="card img-gender">
+              <img src="/assets/images/music/salsa.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Salsa</h5>
+              </div>
+            </div>
+          </div>
+          <div class="music-gender">
+            <div class="card img-gender">
+              <img src="/assets/images/music/romantica.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Romantica</h5>
+              </div>
+            </div>
+            <div class="card img-gender">
+              <img src="/assets/images/music/salsa.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Ballenato</h5>
+              </div>
+            </div>
+            <div class="card img-gender">
+              <img src="/assets/images/music/rock-clasico.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Pop</h5>
+              </div>
+            </div>
+            <div class="card img-gender">
+              <img src="/assets/images/music/rock-espanol.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cristiana</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <!--<ngb-tab title="Disabled" [disabled]="true">-->
+    <ngb-tab title="Otra pestaña" class="text">
+      <ng-template ngbTabContent>
+        <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla
+          facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu,
+          congue et odio. Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices
+          et. Sed diam urna, egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus
+          faucibus nisl enim, nec tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci
+          varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem
+          aliquet ultricies in eget neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>
