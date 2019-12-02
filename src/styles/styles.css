@@ -4,8 +4,10 @@
 }
 
 body {
-  background-color: rgb(40, 29, 105);
-
+  background-image: url('/assets/images/fondo2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Quicksand', sans-serif;
 }
 .imagen{
   margin-top: -160px;
