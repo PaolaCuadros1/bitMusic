@@ -23,10 +23,12 @@
               "src/favicon.ico",
               "src/assets",
               "src/assets/images",
-              "src/assets/audios"
+              "src/assets/audios",
+              "src/assets/iconos/css/fontello.css"
             ],
             "styles": [
-              "src/styles/styles.css"
+              "src/styles/styles.css",
+              "src/assets/iconos/css/fontello.css"
             ],
             "scripts": [
               "src/js/bitMusic.js"
