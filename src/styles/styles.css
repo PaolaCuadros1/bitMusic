@@ -8,11 +8,11 @@ body {
 
 }
 .imagen{
-
+  margin-top: -160px;
   background-image: url("../assets/images/scenery_illustration.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 800px;
+  height: 900px;
 }
 
 a{
@@ -36,12 +36,13 @@ a{
   text-align: center;
 
 }
-.text-main button{
+.text-main a{
   margin-left: 170px;
+  text-decoration: none;
 }
 .boton{
   padding:12px 28px;
-  width: 200px;
+  /*width: 200px;*/
   background-color: rgb(255, 190, 49);
   color:white;
   border: none;
@@ -105,3 +106,25 @@ a{
 .nav-link.active {
   background-color: black !important;
 }
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+.logo-menu{
+  width: 40%;
+  float: left;
+}
+
+.logo-opts{
+  width: 60%;
+}
+
+

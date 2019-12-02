@@ -15,6 +15,8 @@ const appRoutes: Routes = [
   {path: 'main', component: MainComponent},
   {path: 'login', component: LoginComponent},
   {path: 'account', component: AccountComponent},
+  {path: 'mostListened', component: MostListenedComponent},
+  {path: 'search', component: SearchComponent},
 ];
 
 @NgModule({
