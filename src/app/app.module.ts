@@ -8,13 +8,16 @@ import { MenuComponent } from './components/menu/menu.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AccountComponent } from './components/account/account.component';
 import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MostListenedComponent } from './components/most-listened/most-listened.component';
 import { SearchComponent } from './components/search/search.component';
+
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'main', component: MainComponent},
   {path: 'login', component: LoginComponent},
   {path: 'account', component: AccountComponent},
+  {path: 'signUp', component: SignUpComponent},
   {path: 'mostListened', component: MostListenedComponent},
   {path: 'search', component: SearchComponent},
 ];
@@ -26,6 +29,7 @@ const appRoutes: Routes = [
     MenuComponent,
     AccountComponent,
     LoginComponent,
+    SignUpComponent,
     MostListenedComponent,
     SearchComponent
   ],

@@ -99,16 +99,30 @@ a{
   margin-top: 5%;
 }
 
-.name-form{
+.form-group{
+ color: white;
+}
+
+.form-control{
+  width: 50%;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: black;
   color: white;
 }
 
-.nav-link.active {
-  background-color: black !important;
+.form-control:focus {
+  background-color: lightgray;
 }
 
-.form-control:focus {
-  box-shadow: none;
+form{
+  margin-left: 200px;
+}
+#boton-form{
+  margin-left: 34%;
+}
+.nav-link.active {
+  background-color: black !important;
 }
 
 .form-control-underlined {
@@ -126,5 +140,3 @@ a{
 .logo-opts{
   width: 60%;
 }
-
-
