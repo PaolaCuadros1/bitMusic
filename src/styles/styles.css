@@ -8,11 +8,11 @@ body {
 
 }
 .imagen{
-
+  margin-top: -160px;
   background-image: url("../assets/images/scenery_illustration.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 800px;
+  height: 900px;
 }
 
 a{
