@@ -6,9 +6,9 @@
 body {
   background-color: black;
 }
-
+/* cambio de color */
 a{
-  color: #8904B1 !important;
+  color: white !important;
 }
 
 .text-main {
@@ -37,11 +37,12 @@ a{
 
 .name-menu{
   color: white !important;
-  background-color: #2E2E2E;
+ /*  background-color: #2E2E2E; */
 }
-
+/* cambio en el menu */
 .name-menu:hover{
-  color: #8904B1;
+  font-size: 20px;
+  border-bottom:1px solid white;
 }
 
 .music-image{
@@ -78,4 +79,8 @@ a{
 
 .name-form{
   color: white;
+}
+
+.nav-link.active {
+  background-color: black !important;
 }
