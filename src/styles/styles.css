@@ -4,32 +4,54 @@
 }
 
 body {
-  background-color: black;
+  background-color: rgb(40, 29, 105);
+
+}
+.imagen{
+  margin-top: -160px;
+  background-image: url("../assets/images/scenery_illustration.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 900px;
 }
 
 a{
-  color: #8904B1 !important;
+  color: rgb(245, 236, 248) !important;
 }
 
+
+
 .text-main {
+  position: absolute;
   z-index: 2;
   color: white;
-  top: 8em;
-  position: relative;
-  margin-left: 10%;
+  /* top: 8em; */
+  top: 50%;
+  left:50%;
 }
 
 .text-main h1 {
   font-size: 8.25em;
   line-height: 0.85;
-  text-align: right;
+  text-align: center;
 
 }
-
-.main-image {
-  width: 90%;
-  border-radius: 10%;
+.text-main a{
+  margin-left: 170px;
+  text-decoration: none;
 }
+.boton{
+  padding:12px 28px;
+  /*width: 200px;*/
+  background-color: rgb(255, 190, 49);
+  color:white;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  font-size:20px;
+  font-weight:600;
+  justify-content:center;
+}
+
 
 .nav-item{
   margin-right: 4%;
@@ -37,11 +59,12 @@ a{
 
 .name-menu{
   color: white !important;
-  background-color: #2E2E2E;
+ /*  background-color: #2E2E2E; */
 }
-
+/* cambio en el menu */
 .name-menu:hover{
-  color: #8904B1;
+  font-size: 20px;
+  border-bottom:1px solid white;
 }
 
 .music-image{
@@ -76,6 +99,44 @@ a{
   margin-top: 5%;
 }
 
-.name-form{
+.form-group{
+ color: white;
+}
+
+.form-control{
+  width: 50%;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: black;
   color: white;
+}
+
+.form-control:focus {
+  background-color: lightgray;
+}
+
+form{
+  margin-left: 200px;
+}
+#boton-form{
+  margin-left: 34%;
+}
+.nav-link.active {
+  background-color: black !important;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+.logo-menu{
+  width: 40%;
+  float: left;
+}
+
+.logo-opts{
+  width: 60%;
 }
