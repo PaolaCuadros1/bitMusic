@@ -1,0 +1,42 @@
+main{
+    background-color:black;
+    
+}
+
+h2{
+    color:rgb(247, 241, 241);
+    text-align: center;
+    font-size: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    
+}
+
+.contenido{
+    margin-top: 20px;
+    list-style: none;
+    text-align:center;
+    display: grid;
+    grid-template-columns:1fr, 1fr, 1fr;
+    grid-template-areas: 
+                      "selena Jbalvin maluma"
+                      "juanes ed rollings";
+
+   grid-gap:20px;
+}
+
+
+    .contenido li{
+        background-color:purple;
+        border-radius: 5px;
+        justify-content: center;
+        cursor: pointer;
+
+    }
+    .contenido img{
+        margin-top: 30px;
+        border-radius: 15px;
+    }
+    
+
+    
