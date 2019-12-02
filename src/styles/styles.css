@@ -105,3 +105,25 @@ a{
 .nav-link.active {
   background-color: black !important;
 }
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+.logo-menu{
+  width: 40%;
+  float: left;
+}
+
+.logo-opts{
+  width: 60%;
+}
+
+
