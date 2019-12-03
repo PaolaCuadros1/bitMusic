@@ -8,13 +8,22 @@
       <a class="nav-link name-menu" routerLink="/search"><i class="fas fa-search"></i> Buscar</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link name-menu" routerLink="/mostListened"><i class="fas fa-headphones-alt"></i> Lo mas escuchado</a>
+      <a class="nav-link name-menu" routerLink="/mostListened"><i class="fas fa-headphones-alt"></i> Lo mas
+        escuchado</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link name-menu" routerLink="/login"><i class="far fa-user"></i> Iniciar sesión</a>
+      <a class="nav-link name-menu login" routerLink="/login"><i class="far fa-user"></i> Iniciar sesión</a>
+      <a class="nav-link name-menu logout" style="display: none;" routerLink="/" onclick="logout()"><i
+          class="far fa-user"></i> Cerrar sesión</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item signUp-menu">
       <a class="nav-link name-menu" routerLink="/signUp"><i class="far fa-registered"></i> Registrate</a>
     </li>
   </ul>
+  <div class="alert alert-secondary alert-logout" style="display: none; margin-left: 20%; margin-right: 20%;" role="alert">
+    <strong>Gracias por visitarnos!</strong> Vuelve pronto
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="close();">
+        <span aria-hidden="true" onclick="close();">&times;</span>
+      </button>
+  </div>
 </div>

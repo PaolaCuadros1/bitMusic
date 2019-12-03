@@ -4,3 +4,15 @@ function chageSong(nameSong) {
   autoplayVideo.load();
   autoplayVideo.play();
 }
+
+function login(){
+  $('.signUp-menu').hide();
+  $('.login').hide();
+  $('.logout').show();
+}
+function logout(){
+  $('.signUp-menu').show();
+  $('.alert-logout').show();
+  $('.login').show();
+  $('.logout').hide();
+}
