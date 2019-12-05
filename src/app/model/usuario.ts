@@ -1,6 +1,6 @@
 //vamos a crear un modelo de los datos
-// que se enviaran desde el front 
-// paraque  coincidan con los datos del modelo del back 
+// que se enviaran desde el front
+// paraque  coincidan con los datos del modelo del back
 export class Usuario{
     //estamos creando un modelo y exportandolo como una clase
     constructor(
