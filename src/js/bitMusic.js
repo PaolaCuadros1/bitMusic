@@ -16,3 +16,20 @@ function logout(){
   $('.login').show();
   $('.logout').hide();
 }
+//document.getElementById('imagen') //Javascript puro.
+//Jquery
+
+$(function (){
+  $('#imagen').change( function(input){
+     var imagen = input.target.files[0];
+     if(imagen){
+       var leerImagen = new FileReader();
+       leerImagen.onload = function(input){
+        var resultadoImage = input.target.result;
+        $('#mostrarImagen').attr('src', resultadoImage);
+       }
+       $('#mostrarImagen').show();
+       leerImagen.readAsDataURL(imagen);
+     }
+  })
+})
