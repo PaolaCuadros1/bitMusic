@@ -4,7 +4,7 @@
 export class Usuario{
     //estamos creando un modelo y exportandolo como una clase
     constructor(
-        public_id:String,// es la propiedad con la que se crea en mongo
+        public _id:String,// es la propiedad con la que se crea en mongo
         public nombre:String,
         public apellido:String,
         public correo:String,
