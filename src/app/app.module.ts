@@ -16,6 +16,7 @@ import { MostListenedComponent } from './components/most-listened/most-listened.
 import { SearchComponent } from './components/search/search.component';
 
 import { UserService } from './services/user.service';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
   { path: 'signUp', component: SignUpComponent },
   { path: 'mostListened', component: MostListenedComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'updateUser', component: UpdateUserComponent }
 ];
 
 @NgModule({
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     FooterComponent,
     SignUpComponent,
     MostListenedComponent,
-    SearchComponent
+    SearchComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
