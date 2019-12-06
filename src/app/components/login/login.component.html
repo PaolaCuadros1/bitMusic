@@ -3,18 +3,23 @@
     <div class="card black-card">
       <div class="card-body">
         <h5 class="card-title">Ingresa tus datos</h5>
-        <form>
+<!-- aui estamos convirtiendo un formulario html a Angular y esto lo hacemos con ngForm -->
+        <form #formularioLogin="ngForm" (ngSubmit)="loginUsuario()">
           <div class="form-group">
             <!--<label class="name-form" for="email">Correo electronico</label>-->
-            <input type="email" class="form-control" id="email" placeholder="Correo electronico">
+            
+            <!-- para cambiar los input a Angular es con ngModel y angular respeta el camelcase, se le tiene que crear un name
+            porque angular no trabaja sobre el id sino sobre el nombre -->
+            <input #email="ngModel" name="email" [(ngModel)]="login.email" type="email" class="form-control" id="email" placeholder="Correo electronico">
           </div>
           <div class="form-group">
             <!--<label class="name-form" for="password">Contraseña</label>-->
-            <input type="password" class="form-control" id="password" placeholder="Contraseña">
+            <input #password="ngModel" name="password" [(ngModel)]="login.password" type="password" class="form-control" id="password" placeholder="Contraseña">
           </div>
           <a class="btn boton" style="color: white !important;; " routerLink="/account" onclick="login();" >Iniciar sesión</a>
           <!--<button type="submit" class="btn btn-primary">Iniciar sesión</button>-->
         </form>
+
       </div>
     </div>
   </div>
