@@ -9,12 +9,14 @@ function login() {
   $('.signUp-menu').hide();
   $('.login').hide();
   $('.logout').show();
+  $('.updateUser').show();
 }
 function logout() {
   $('.signUp-menu').show();
   $('.alert-logout').show();
   $('.login').show();
   $('.logout').hide();
+  $('.updateUser').hide();
 }
 //document.getElementById('imagen') //Javascript puro.
 //Jquery
