@@ -1,17 +1,32 @@
 <div class="container">
-  <form class="form-signUp">
+  <!-- linea modificada -->
+  <!-- Indicamos un Id de angular cuyo valor es ngForm para que se acople al formulario
+  tradicional de Angular -- #formularioRegistro="ngForm
+  
+  Declaramos un evento nativo de Angular llamado ngSubmit. Los eventos en Angular se declaran con ().
+  Este evento va a disparar una función que se encuentra en el archivo sing-up component.ts" -->
+  
+  <form class="form-signUp" #formularioRegistro="ngForm" (ngSubmit)="registrarUsuario()" >
+     <!-- linea modificada -->
+
     <div class="form-row">
       <div class="form-group form-group-1 col-md-6">
-        <label class="name-form" for="firstName">Nombre</label>
-        <input type="text" class="form-control form-control-1" id="firstName" placeholder="Nombre" required >
+      <label class="name-form" for="firstName">Nombre</label>
+       <!-- linea modificada -->  
+      <input type="text" class="form-control form-control-1" id="firstName" placeholder="Nombre" required 
+      #nombre="ngModel" name="nombre" [(ngModel)]="usuarioRegistro.nombre">
+        <!-- linea modificada -->
       </div>
+
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="lastName">Apellidos</label>
-        <input type="text" class="form-control form-control-1" id="lastName" placeholder="Apellidos" required>
+        <!-- linea modificada -->
+        <input type="text" class="form-control form-control-1" id="lastName" placeholder="Apellidos" required
+        #apellido="ngModel" name="apellido" [(ngModel)]= "usuarioRegistro.apellido">
       </div>
     </div>
 
-    <div class="form-row">
+    <!-- <div class="form-row">
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="address">Dirección</label>
         <input type="text" class="form-control form-control-1" id="address" placeholder="Dirección" required>
@@ -32,19 +47,28 @@
         <input type="text" class="form-control form-control-1" id="birthdateCity" placeholder="Ciudad de nacimiento" required>
       </div>
     </div>
-
+ -->
     <div class="form-row">
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="email">Correo electronico</label>
-        <input type="email" class="form-control form-control-1" id="email" placeholder="Correo electronico" required>
+        <!-- linea modificada -->
+        <input type="email" class="form-control form-control-1" id="email" placeholder="Correo electronico" required
+        #correo="ngModel" name="correo" [(ngModel)]="usuarioRegistro.correo">
+        <!-- linea modificada -->
       </div>
+
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="birthdateCity">Password</label>
-        <input type="password" class="form-control form-control-1" id="birthdateCity" placeholder="Password" required>
+        <!-- linea modificada -->
+        <input type="password" class="form-control form-control-1" id="birthdateCity" placeholder="Password" required
+        #contrasena="ngModel" name="contrasena" [(ngModel)]="usuarioRegistro.contrasena">
+        <!-- linea modificada -->
       </div>
     </div>
+    
     <br><br>
-    <a class="boton" id="boton-form" style="color: white !important;;" routerLink="/account">Crear usuario</a>
+    <!-- <a class="boton" id="boton-form" style="color: white !important;;" routerLink="/account">Crear usuario</a> -->
+    <button type="submit" class="botom">Registrarse</button>
   </form>
 </div>
 
