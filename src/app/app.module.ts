@@ -2,6 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+//Nueva Linea
+//Importar el modulo Forms para que nuestros formularios  sean copatibles con 
+// angular
+import { FormsModule } from '@angular/forms';
+
+// Importar el modulo HttpClientModule para poder tener acceso a la cabeceras
+//  que hemos inportado en nuestros servicio
+
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -13,6 +23,12 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MostListenedComponent } from './components/most-listened/most-listened.component';
 import { SearchComponent } from './components/search/search.component';
 
+//nueva Linea
+//Importar el servicio que hemos creado
+
+import { UsuarioService } from './servicio/usuario.service';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
+
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'main', component: MainComponent},
@@ -21,6 +37,7 @@ const appRoutes: Routes = [
   {path: 'signUp', component: SignUpComponent},
   {path: 'mostListened', component: MostListenedComponent},
   {path: 'search', component: SearchComponent},
+  {path: 'updateUser', component: UpdateUserComponent}
 ];
 
 @NgModule({
@@ -33,14 +50,21 @@ const appRoutes: Routes = [
     FooterComponent,
     SignUpComponent,
     MostListenedComponent,
-    SearchComponent
+    SearchComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    //Nuevas  lineas-> imports maneja los modulos, paquetes y librerias
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    //nueva Linea-> provee los servicios de un aplicacion Angular.
+    UsuarioService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
