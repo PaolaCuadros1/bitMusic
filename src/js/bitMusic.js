@@ -5,14 +5,44 @@ function chageSong(nameSong) {
   autoplayVideo.play();
 }
 
-function login(){
+function login() {
   $('.signUp-menu').hide();
   $('.login').hide();
   $('.logout').show();
 }
-function logout(){
+function logout() {
   $('.signUp-menu').show();
   $('.alert-logout').show();
   $('.login').show();
   $('.logout').hide();
 }
+//document.getElementById('imagen') //Javascript puro.
+//Jquery
+
+$(function(){
+  $('#imagen').change( function(input){
+    var imagen = input.target.files[0];
+    if(imagen){
+      var leerImagen = new FileReader();
+      leerImagen.onload = function(input){
+        var resultadoImage = input.target.result;
+        $('#mostrarImagen').attr('src', resultadoImage);
+      }
+      $('#mostrarImagen').show();
+      leerImagen.readAsDataURL(imagen);
+    }
+  } )
+})
+
+
+
+/*
+      var reader = new FileReader();
+      reader.onload = function(e){
+        var result = e.target.result;
+        $('#imgSalida').attr("src", result);
+      }
+      reader.readAsDataURL(file);
+    }
+  }
+});*/
