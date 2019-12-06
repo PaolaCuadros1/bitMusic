@@ -1,33 +1,34 @@
 <div class="container">
-  <form class="form-signUp">
+  <form class="form-signUp" #formularioActualizar="ngForm" (ngSubmit)="actualizarUsuario()">
 
 
     <div class="form-row">
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="nombre"> Nombre </label>
-        <input type="text" name="nombre" class="form-control form-control-1" id="nombre" />
+        <input type="text" name="nombre" class="form-control form-control-1" id="nombre" placeholder="Nombre"
+        required #nombre="ngModel" name="nombre" [(ngModel)]="usuarioActualizar.nombre" />
       </div>
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="apellido"> Apellidos </label>
-        <input type="text" name="apellido" class="form-control form-control-1" id="apellido" />
+        <input type="text" name="apellido" class="form-control form-control-1" id="apellido" placeholder="Apellido" required #apellido="ngModel" name="apellido" [(ngModel)]="usuarioActualizar.apellido" />
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="email"> Email </label>
-        <input type="email" name="email" class="form-control form-control-1" id="email" />
+        <input type="email" name="email" class="form-control form-control-1" id="email" placeholder="Correo Electronico" required #correo="ngModel" name="correo" [(ngModel)]="usuarioActualizar.correo" />
       </div>
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="contrasena"> Contraseña </label>
-        <input type="password" name="contrasena" class="form-control form-control-1" id="contrasena" />
+        <input type="password" name="contrasena" class="form-control form-control-1" id="contrasena" placeholder="Contraseña" required #contrasena="ngModel" name="contrasena" [(ngModel)]="usuarioActualizar.contrasena" />
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="imagen"> Imagen </label>
-        <input type="file" class="form-control-file" id="imagen" accept="image/*" />
+        <input type="file" class="form-control-file" id="imagen" accept="image/*" required #imagen="ngModel" name="imagen" [(ngModel)]="usuarioActualizar.imagen" />
       </div>
 
       <div class="form-group form-group-1 col-md-6">
@@ -38,7 +39,7 @@
 
     </div>
 
-    <button class="boton"> Actualizar </button>
+    <button class="boton" type="submit"> Actualizar </button>
 
 
   </form>
