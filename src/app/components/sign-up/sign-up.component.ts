@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../model/usuario'; //Llamamos el modelo de usuario.
 import { UserService } from '../../services/user.service'; //Llamamos el servicio de usuario.
+import { Router, ActivatedRoute, Params } from '@angular/router'; //Importamos el objeto rutas que permitirá redireccionar a un componente.
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -10,7 +11,8 @@ export class SignUpComponent implements OnInit {
   //Declaración de la variable que esta trayendo los valores de los imputs en el html [(ngModel)]="usuarioRegistro"
   public usuarioRegistro: Usuario; //La variable será del tipo del modelo, en este caso Usuario
   constructor(
-    private userService: UserService // La variable que tendrá el valor del servicio que se necesite.
+    private userService: UserService, // La variable que tendrá el valor del servicio que se necesite.
+    private route: Router
   ) {
     //Se pasan los datos al modelo para que se puedan registrar.
     this.usuarioRegistro = new Usuario('', '', '', '', '', 'ROLE_USER', '');
@@ -37,10 +39,11 @@ export class SignUpComponent implements OnInit {
           alert(`Registro exitoso!!, Inicia sesión ${this.usuarioRegistro.correo}`);
           //Limpiar el modelo, ya que se guardó exitosamente el usuario
           this.usuarioRegistro = new Usuario('', '', '', '', '', 'ROLE_USER', '');
+          this.route.navigate(['/login']);
         }
       }, error => {
         var errorMensaje = <any>error; //Devuelve cualquier tipo de error, es propio de typeScript.
-        if (errorMensaje != null){
+        if (errorMensaje != null) {
           console.log(error);
         }
       }
