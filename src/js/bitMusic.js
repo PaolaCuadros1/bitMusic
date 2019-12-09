@@ -5,21 +5,21 @@ function chageSong(nameSong) {
   autoplayVideo.play();
 }
 
-function login() {
+function login(){
   $('.signUp-menu').hide();
   $('.login').hide();
   $('.logout').show();
   $('.updateUser').show();
+
 }
-function logout() {
+function logout(){
   $('.signUp-menu').show();
-  $('.alert-logout').show();
+  // $('.alert-logout').show();
   $('.login').show();
   $('.logout').hide();
   $('.updateUser').hide();
+
 }
-//document.getElementById('imagen') //Javascript puro.
-//Jquery
 
 $(function(){
   $('#imagen').change( function(input){
@@ -35,16 +35,3 @@ $(function(){
     }
   } )
 })
-
-
-
-/*
-      var reader = new FileReader();
-      reader.onload = function(e){
-        var result = e.target.result;
-        $('#imgSalida').attr("src", result);
-      }
-      reader.readAsDataURL(file);
-    }
-  }
-});*/

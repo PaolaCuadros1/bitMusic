@@ -1,46 +1,79 @@
+// import { Component, OnInit } from '@angular/core';
+
+// @Component({
+//   selector: 'app-sign-up',
+//   templateUrl: './sign-up.component.html',
+//   styleUrls: ['./sign-up.component.css']
+// })
+// export class SignUpComponent implements OnInit {
+
+//   constructor() { }
+
+//   ngOnInit() {
+//   }
+
+// }
+
+
+
+
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../../model/usuario'; //Llamamos el modelo de usuario.
-import { UserService } from '../../services/user.service'; //Llamamos el servicio de usuario.
+import { Usuario } from '../../modelo/usuario';
+import { UsuarioService } from '../../servicio/usuario.service';
+
+import { Router, ActivatedRoute, Params } from '@angular/router'; // wait!!
+import swal from 'sweetalert';
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-  //Declaración de la variable que esta trayendo los valores de los imputs en el html [(ngModel)]="usuarioRegistro"
-  public usuarioRegistro: Usuario; //La variable será del tipo del modelo, en este caso Usuario
+  // public usuario: Usuario;
+  public usuarioRegistro: Usuario;
+  // registroCorrecto;
+
   constructor(
-    private userService: UserService // La variable que tendrá el valor del servicio que se necesite.
-  ) {
-    //Se pasan los datos al modelo para que se puedan registrar.
+    private usuarioService : UsuarioService,
+    private _router: Router // wait!!!
+  ){
+    // this.usuario = new Usuario('', '', '', '', '', 'ROLE_USER', '');
     this.usuarioRegistro = new Usuario('', '', '', '', '', 'ROLE_USER', '');
   }
 
   ngOnInit() {
   }
 
-  //Método para registrar usuario en el cual tendrá toda la logíca para guardar ls datos del usuario.
+ /*  registrar(){
+    alert("nombre: "+this.usuario.nombre
+      +" edad: "+this.usuario.edad)
+  } */
 
-  registrarUsuario() {
-    console.log(this.usuarioRegistro);
-    //Se accede al servicio enviando la ariable usuarioRegistro, para llamarlo utilizaremos un método del Observable llamado subceibw para que se pueda recoger los datos que se envían y que se guardarán en la DB.
-    this.userService.registry(this.usuarioRegistro).subscribe(
-      //Parametro de tipo cualquiero cosa => response:any -> El any significa cualquier cosa.
-      (respnse: any) => {
-        let usuario = respnse.usuario; //Acá están todos los datos del usuario
-        this.usuarioRegistro = usuario
 
-        //Validamos dependiendo del _id, si se ha registrado un usuario nuevo, si el _id es nuevo, quiero decir que el registro fue exitoso.
-        if (!this.usuarioRegistro._id) {
-          alert("Error al registrarse.");
-        } else {
-          alert(`Registro exitoso!!, Inicia sesión ${this.usuarioRegistro.correo}`);
-          //Limpiar el modelo, ya que se guardó exitosamente el usuario
-          this.usuarioRegistro = new Usuario('', '', '', '', '', 'ROLE_USER', '');
+  registrarUsuario(){
+    this.usuarioService.registro(this.usuarioRegistro).subscribe(
+      (response:any) => {
+        let usuario = response.usuario;
+        this.usuarioRegistro = usuario;
+
+        if(!this.usuarioRegistro._id){
+          alert("Error al registrarse");
+          // this.registroCorrecto = "El registro es correcto te puedes loguear con el email "+this.usuario.correo;
+
+        }else{
+          //alert(`Registro exitoso!!, ingrese con ${this.usuarioRegistro.correo}`);
+          swal("Registro exitoso!!", `Por favor, ingresa con ${this.usuarioRegistro.correo}`, "success");
+          // this.registroCorrecto = "no se ha realizado el registro del usuario, consulte con soporte ";
+
+          this.usuarioRegistro = new Usuario('', '', '', '', '', 'ROLE_USER', '');  
+          this._router.navigate(['/login']) // wait!!
         }
-      }, error => {
-        var errorMensaje = <any>error; //Devuelve cualquier tipo de error, es propio de typeScript.
-        if (errorMensaje != null){
+      },
+      error => {
+        var errorMensaje = <any>error;
+
+        if(errorMensaje != null){
           console.log(error);
         }
       }
@@ -48,3 +81,4 @@ export class SignUpComponent implements OnInit {
   }
 
 }
+

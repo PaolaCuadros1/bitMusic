@@ -61,6 +61,7 @@ a{
 
 .name-menu{
   color: white !important;
+  padding: 0px !important;
  /*  background-color: #2E2E2E; */
 }
 /* cambio en el menu */
@@ -135,14 +136,39 @@ a{
 }
 
 .logo-menu{
-  width: 40%;
+  width: 20%;
   float: left;
 }
 
 .logo-opts{
-  width: 60%;
+  width: 80%;
 }
 
 .container{
   margin-top: 5%;
+}
+
+.image-menu{
+  margin-top: -17px !important;
+}
+
+.image-menu > span{
+  color: white;
+}
+.image-menu > img{
+  border-radius: 50%;
+  border: 2px blueviolet solid;
+  margin-right: 10px;
+}
+
+.menu-bitMusic{
+  margin-right: 3%;
+}
+
+.dropdown-menu-bitBusic{
+  background-color: transparent !important;
+}
+
+.dropdown-item:hover{
+  background-color: transparent !important;
 }

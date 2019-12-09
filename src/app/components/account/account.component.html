@@ -3,6 +3,13 @@
     <ngb-tab title="Mi Música" class="text">
       <ng-template ngbTabContent>
         <div class="info-client">
+          <!-- NUEVA LÍNEA -->
+          <a class="nav-link name-menu updateUser" style="color: white;" routerLink="/account">
+            <img id="imgUsuario" src="{{ url + 'obtener-imagen-usuario/' + identidad.imagen}}" style="width: 80px;" />
+            Bienvenid@ <span id="nombre-usuario">{{ identidad.nombre }}</span> </a>
+          <!-- NUEVA LÍNEA -->
+
+
           <div class="row">
             <div class="col-6">
               <table style="width: 100%; text-align: center;">

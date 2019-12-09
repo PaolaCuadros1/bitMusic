@@ -1,18 +1,28 @@
 <div class="container">
-  <form class="form-signUp" #formularioRegistro="ngForm" (ngSubmit)="registrarUsuario()" >
+  <!-- Línea modificada -->
+  <form class="form-signUp" #formularioRegistro="ngForm" (ngSubmit)="registrarUsuario()">
+  <!-- Línea modificada -->
+
     <div class="form-row">
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="firstName">Nombre</label>
+  <!-- Línea modificada -->
+        <input class="form-control form-control-1" id="firstName" placeholder="Nombre" required
+        type="text" #nombre="ngModel" name="nombre" [(ngModel)]="usuarioRegistro.nombre">
+  <!-- Línea modificada -->
 
-        <input type="text" class="form-control form-control-1" id="firstName" placeholder="Nombre" required #nombre="ngModel" name="nombre" [(ngModel)]="usuarioRegistro.nombre" >
       </div>
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="lastName">Apellidos</label>
-        <input type="text" class="form-control form-control-1" id="lastName" placeholder="Apellidos" required #apellido="ngModel" name="apellido" [(ngModel)]="usuarioRegistro.apellido">
+  <!-- Línea modificada -->
+        <input class="form-control form-control-1" id="lastName" placeholder="Apellidos" required
+        type="text" #apellido="ngModel" name="apellido" [(ngModel)]="usuarioRegistro.apellido">
+  <!-- Línea modificada -->
+
       </div>
     </div>
 
-    <!--<div class="form-row">
+    <!-- <div class="form-row">
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="address">Dirección</label>
         <input type="text" class="form-control form-control-1" id="address" placeholder="Dirección" required>
@@ -21,9 +31,9 @@
         <label class="name-form" for="city">Ciudad</label>
         <input type="text" class="form-control form-control-1" id="city" placeholder="Ciudad" required>
       </div>
-    </div>  
+    </div>   -->
 
-    <div class="form-row">
+    <!-- <div class="form-row">
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="birthdate">Fecha de nacimiento</label>
         <input type="text" class="form-control form-control-1" id="birthdate" placeholder="Fecha de nacimiento" required>
@@ -32,21 +42,34 @@
         <label class="name-form" for="birthdateCity">Ciudad de nacimiento</label>
         <input type="text" class="form-control form-control-1" id="birthdateCity" placeholder="Ciudad de nacimiento" required>
       </div>
-    </div>-->
+    </div> -->
 
     <div class="form-row">
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="email">Correo electronico</label>
-        <input type="email" class="form-control form-control-1" id="email" placeholder="Correo electronico" required #correo="ngModel" name="correo" [(ngModel)]="usuarioRegistro.correo">
+  <!-- Línea modificada -->
+        <input class="form-control form-control-1" id="email" placeholder="Correo electronico" required
+        type="text" #correo="ngModel" name="correo" [(ngModel)]="usuarioRegistro.correo">
+  <!-- Línea modificada -->
+
       </div>
       <div class="form-group form-group-1 col-md-6">
         <label class="name-form" for="birthdateCity">Password</label>
-        <input type="password" class="form-control form-control-1" id="birthdateCity" placeholder="Password" required #contrasena="ngModel" name="contrasena" [(ngModel)]="usuarioRegistro.contrasena">
+  <!-- Línea modificada -->
+        <input class="form-control form-control-1" id="birthdateCity" placeholder="Password" required
+        type="password" #contrasena="ngModel" name="contrasena" [(ngModel)]="usuarioRegistro.contrasena">
+  <!-- Línea modificada -->
       </div>
     </div>
     <br><br>
-    <button class="boton" type="submit" >Crear usuario</button>
-    <!--<a class="boton" id="boton-form" style="color: white !important;;" routerLink="/account">Crear usuario</a>-->
+    <!-- <a class="boton" id="boton-form" style="color: white !important;;" routerLink="/account">Crear usuario</a> -->
+    <button type="submit" 
+            class="btn btn-light boton">Registrarse</button>
+
+    <!-- <div *ngIf="registroCorrecto" 
+            class="alert alert-danger">
+                {{registroCorrecto}}
+            </div> -->
   </form>
 </div>
 
