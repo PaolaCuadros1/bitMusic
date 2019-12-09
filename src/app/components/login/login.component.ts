@@ -1,7 +1,27 @@
+// import { Component, OnInit } from '@angular/core';
+
+// @Component({
+//   selector: 'app-login',
+//   templateUrl: './login.component.html',
+//   styleUrls: ['./login.component.css']
+// })
+// export class LoginComponent implements OnInit {
+
+//   constructor() { }
+
+//   ngOnInit() {
+//   }
+
+// }
+
+
+
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../../model/usuario';
-import { UserService } from '../../services/user.service';
+import { Usuario } from '../../modelo/usuario';
+import { UsuarioService } from '../../servicio/usuario.service';
+
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-login',
@@ -11,24 +31,29 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class LoginComponent implements OnInit {
   public identidad;
   public login: Usuario;
+
   constructor(
-    private userService: UserService,
-    private route: Router
-  ) { 
-    this.login = new Usuario('', '', '', '', '', 'ROLE_USER', '')
+    private usuarioService: UsuarioService,
+    private _router: Router
+  ) {
+    this.login = new Usuario('', '', '', '', '', 'ROLE_USER', '');
   }
 
   ngOnInit() {
+    // document.getElementById('footer').style.position = "fixed";
   }
 
-  loginUsuario(){
-    //Accedemos al inicio de iniciarSesion
-    this.userService.iniciarSesion( this.login ).subscribe(
-      (response: any) =>{
+  // ngOnDestroy() {
+  //   document.getElementById('footer').style.position = "relative";
+  // }
+
+  loginUsuario() {
+    this.usuarioService.iniciarSesion(this.login).subscribe(
+      (response: any) => {
         let usuario = response.usuario;
         this.login = usuario;
-        if (this.login){
-          let usuarioLogeado = new Usuario(
+        if (this.login) {
+          let usuarioLogueado = new Usuario(
             this.login._id,
             this.login.nombre,
             this.login.apellido,
@@ -37,22 +62,29 @@ export class LoginComponent implements OnInit {
             this.login.rol,
             this.login.imagen
           )
-          localStorage.setItem('sesion', JSON.stringify(usuarioLogeado));
-          this.identidad = this.userService.obtenerNombreUsuario();
-          
-          console.log( this.identidad )
-          alert(`Bienvenid@ ${this.identidad.nombre} ${this.identidad.apellido} `);
-          this.route.navigate(['/account']);
-        }else{
-          alert("Error al iniciar sesión");
+
+          localStorage.setItem("sesion", JSON.stringify(usuarioLogueado));
+          this.identidad = this.usuarioService.obtenerNombreUsuario();
+          // alert('Has iniciado sesión!');
+          //alert(`Hola ${this.identidad.nombre}!! Bienvenid@`)
+          swal("Bienvenid@!!!", `Un gusto verte de nuevo ${this.identidad.nombre}`, "success");
+          this._router.navigate(['/account']);
+
+
+        } else {
+          // this.loginCorrecto = "los datos ingresados son incorrectos  ";
+          alert("usuario no identificado");
+
         }
       }, error => {
-        if (error != null){
-          console.log(error);
+        if (error != null) {
+          console.log(error)
         }
       }
-      
     )
   }
 
+
+
 }
+
