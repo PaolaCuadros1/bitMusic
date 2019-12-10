@@ -1,15 +1,24 @@
+<ul class="nav justify-content-center user-image p-5">
+  <li class="nav-item menu-bitMusic logout">
+    <a class="nav-link updateUser" href="#" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+      <div class="image-menu">
+        <img id="imgUsuario" src="{{ url + 'obtener-imagen-usuario/' + identidad.imagen}}" style="width: 60px;" /><span
+          id="nombre-usuario">{{ identidad.nombre }}</span>
+      </div>
+    </a>
+    <div class="dropdown-menu dropdown-menu-bitBusic" aria-labelledby="navbarDropdown">
+      <a class="nav-link name-menu dropdown-item" routerLink="/updateUser"><i class="fas fa-file-signature"></i> Actualizar
+        usuario </a>
+      <a class="nav-link name-menu dropdown-item" onclick="logout()" (click)="cerrarSesion()"><i class="fas fa-circle-notch"></i> Cerrar sesión </a>
+    </div>
+  </li>
+</ul>
+
 <div class="container">
   <ngb-tabset>
     <ngb-tab title="Mi Música" class="text">
       <ng-template ngbTabContent>
         <div class="info-client">
-          <!-- NUEVA LÍNEA -->
-          <a class="nav-link name-menu updateUser" style="color: white;" routerLink="/account">
-            <img id="imgUsuario" src="{{ url + 'obtener-imagen-usuario/' + identidad.imagen}}" style="width: 80px;" />
-            Bienvenid@ <span id="nombre-usuario">{{ identidad.nombre }}</span> </a>
-          <!-- NUEVA LÍNEA -->
-
-
           <div class="row">
             <div class="col-6">
               <table style="width: 100%; text-align: center;">

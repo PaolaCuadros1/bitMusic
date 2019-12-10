@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UsuarioService } from '../../servicio/usuario.service';
-import swal from 'sweetalert';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -13,8 +12,6 @@ export class MenuComponent implements OnInit {
   constructor(
     private usuarioService : UsuarioService,
     private _router: Router,
-    
-
   ) { 
     this.url = usuarioService.url;
    }
@@ -23,15 +20,7 @@ export class MenuComponent implements OnInit {
     this.identidad = this.usuarioService.obtenerNombreUsuario();
   }
 
-  cerrarSesion(){
-    this.identidad = this.usuarioService.obtenerNombreUsuario();
-    
-    swal(`vuelve pronto ${this.identidad.nombre}!!`);
-    this._router.navigate(['/main']);
-    localStorage.removeItem('sesion');
-    localStorage.clear();
-    this.identidad = null;
-  }
+  
 
 
 }

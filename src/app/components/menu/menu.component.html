@@ -1,41 +1,26 @@
 <div>
   <a class="nav-link logo-menu" routerLink="/">
-    <img src="/assets/images/icono.png" style="width: 20%;" alt="" srcset="">
-    <img src="/assets/images/logo1.png" style="width: 30%;" alt="" srcset="">
+    <img src="/assets/images/icono.png" style="width: 40%;" alt="" srcset="">
+    <img src="/assets/images/logo1.png" style="width: 40%;" alt="" srcset="">
   </a>
   <ul class="nav justify-content-center logo-opts p-5">
     <li class="nav-item menu-bitMusic">
-      <a class="nav-link name-menu" routerLink="/search"><i class="fas fa-search"></i> Buscar</a>
+      <a class="nav-link name-menu login" routerLink="/search"><i class="fas fa-search"></i> Buscar</a>
     </li>
     <li class="nav-item menu-bitMusic">
-      <a class="nav-link name-menu" routerLink="/mostListened"><i class="fas fa-headphones-alt"></i> Lo mas
+      <a class="nav-link name-menu login" routerLink="/mostListened"><i class="fas fa-headphones-alt"></i> Lo mas
         escuchado</a>
     </li>
     <li class="nav-item menu-bitMusic">
       <a class="nav-link name-menu login" routerLink="/login"><i class="far fa-user"></i> Iniciar sesión </a>
-      <a class="nav-link name-menu logout" style="display: none;" routerLink="/account"><i
-          class="fas fa-headphones-alt"></i> Mi cuenta</a>
+      <a class="nav-link name-menu logout" style="display: none;" routerLink="/account"><i class="fas fa-music"></i> Mi cuenta</a>
     </li>
-    <li class="nav-item menu-bitMusic signUp-menu">
-      <a class="nav-link name-menu" routerLink="/signUp"><i class="far fa-registered"></i> Registrate </a>
-    </li>
-    <!--<div *ngIf="isLoged">-->
-      <li class="nav-item menu-bitMusic logout">
-        <a class="nav-link name-menu updateUser" href="#" id="navbarDropdown" data-toggle="dropdown"
-          aria-expanded="false" style="display: none;">
-          <div class="image-menu">
-            <img id="imgUsuario" src="{{ url + 'obtener-imagen-usuario/' + identidad.imagen}}"
-              style="width: 60px;" /><span id="nombre-usuario">{{ identidad.nombre }}</span>
-          </div>
-        </a>
-        <div class="dropdown-menu dropdown-menu-bitBusic" aria-labelledby="navbarDropdown">
-          <a class="nav-link name-menu dropdown-item" routerLink="/updateUser"><i class="far fa-user"></i> Actualizar
-            usuario </a>
-          <a class="nav-link name-menu dropdown-item" onclick="logout()" (click)="cerrarSesion()"><i
-              class="far fa-user"></i> Cerrar sesión </a>
-        </div>
-      </li>
-    <!--</div>-->
+    <li class="nav-item menu-bitMusic">
+      <a class="nav-link name-menu login" routerLink="/signUp"><i class="far fa-registered"></i> Registrate </a>
+      <a class="nav-link name-menu logout" style="display: none;" routerLink="/updateUser"><i class="far fa-user"></i>
+        Actualizar
+        usuario </a>
 
+    </li>
   </ul>
 </div>
