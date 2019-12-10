@@ -52,29 +52,37 @@ export class LoginComponent implements OnInit {
       (response: any) => {
         let usuario = response.usuario;
         this.login = usuario;
-        if (this.login) {
-          let usuarioLogueado = new Usuario(
-            this.login._id,
-            this.login.nombre,
-            this.login.apellido,
-            this.login.correo,
-            this.login.contrasena,
-            this.login.rol,
-            this.login.imagen
-          )
-
-          localStorage.setItem("sesion", JSON.stringify(usuarioLogueado));
-          this.identidad = this.usuarioService.obtenerNombreUsuario();
-          // alert('Has iniciado sesión!');
-          //alert(`Hola ${this.identidad.nombre}!! Bienvenid@`)
-          swal("Bienvenid@!!!", `Un gusto verte de nuevo ${this.identidad.nombre}`, "success");
-          this._router.navigate(['/account']);
-
-
+        if (response.message === 'incorrecta') {
+          swal("Contraseña incorrecta", 'Por favor verifica tus datos', "error");
+          this._router.navigate(['/']);
+        } else if (response.message === 'No registrado') {
+          swal("Usuario no existe!", 'Te invitamos a registrate.', "error");
+          this._router.navigate(['/signUp']);
         } else {
-          // this.loginCorrecto = "los datos ingresados son incorrectos  ";
-          alert("usuario no identificado");
+          if (this.login) {
+            let usuarioLogueado = new Usuario(
+              this.login._id,
+              this.login.nombre,
+              this.login.apellido,
+              this.login.correo,
+              this.login.contrasena,
+              this.login.rol,
+              this.login.imagen
+            )
 
+            localStorage.setItem("sesion", JSON.stringify(usuarioLogueado));
+            this.identidad = this.usuarioService.obtenerNombreUsuario();
+            // alert('Has iniciado sesión!');
+            //alert(`Hola ${this.identidad.nombre}!! Bienvenid@`)
+            swal("Bienvenid@!!!", `Un gusto verte de nuevo ${this.identidad.nombre}`, "success");
+            this._router.navigate(['/account']);
+
+
+          } else {
+            // this.loginCorrecto = "los datos ingresados son incorrectos  ";
+            alert("usuario no identificado");
+
+          }
         }
       }, error => {
         if (error != null) {

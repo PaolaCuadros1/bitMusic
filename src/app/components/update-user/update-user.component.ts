@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../modelo/usuario';
 import { UsuarioService } from '../../servicio/usuario.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import swal from 'sweetalert';
 
 
@@ -15,12 +16,9 @@ export class UpdateUserComponent implements OnInit {
   // public archivoSubir: Array<File>;
   public url: String;
   public identidad;
-
-
-
   constructor(
-    private usuarioService : UsuarioService
-
+    private usuarioService : UsuarioService,
+    private _router: Router,
 
   ) {
     this.url = usuarioService.url
@@ -77,6 +75,16 @@ export class UpdateUserComponent implements OnInit {
         }
       }
     )
+  }
+
+  cerrarSesion(){
+    this.identidad = this.usuarioService.obtenerNombreUsuario();
+    
+    swal(`vuelve pronto ${this.identidad.nombre}!!`);
+    this._router.navigate(['/main']);
+    localStorage.removeItem('sesion');
+    localStorage.clear();
+    this.identidad = null;
   }
 
 }

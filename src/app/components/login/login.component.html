@@ -3,34 +3,17 @@
     <div class="card black-card">
       <div class="card-body">
         <h5 class="card-title">Ingresa tus datos</h5>
-        <!-- linea modificada  -->
         <form #formularioLogin="ngForm" (ngSubmit)="loginUsuario()">
-        <!-- linea modificada  -->
 
           <div class="form-group">
-            <!--<label class="name-form" for="email">Correo electronico</label>-->
-
-            <!-- linea modificada  -->
-            <input type="email" class="form-control" id="email" placeholder="Correo electronico" required
-            type="text" #correo="ngModel" name="correo" [(ngModel)]="login.correo">
-        <!-- linea modificada  -->
-
+            <input type="email" class="form-control" id="email" placeholder="Correo electronico" required type="text"
+              #correo="ngModel" name="correo" [(ngModel)]="login.correo">
           </div>
           <div class="form-group">
-            <!--<label class="name-form" for="password">Contraseña</label>-->
-
-        <!-- linea modificada  -->
-            <input type="password" class="form-control" id="password" placeholder="Contraseña" required
-            type="password" #contrasena="ngModel" name="contrasena" [(ngModel)]="login.contrasena">
-        <!-- linea modificada  -->
-
+            <input type="password" class="form-control" id="password" placeholder="Contraseña" required type="password"
+              #contrasena="ngModel" name="contrasena" [(ngModel)]="login.contrasena">
           </div>
-          <!-- <a class="btn boton" style="color: white !important;; " routerLink="/account" onclick="login();" >Iniciar sesión</a> -->
-          <!--<button type="submit" class="btn btn-primary">Iniciar sesión</button>-->
-          <!-- <input type="submit" value="Entrar" /> -->
-          <button type="submit" 
-            class="btn btn-light boton"
-            onclick="login();">Iniciar Sesión</button>
+          <button type="submit" class="btn btn-light boton" onclick="login();">Iniciar Sesión</button>
         </form>
       </div>
     </div>

@@ -5,14 +5,23 @@ function chageSong(nameSong) {
   autoplayVideo.play();
 }
 
-function login(){
+function login() {
+  setTimeout(function () {
+    var sss = JSON.parse(localStorage.getItem("sesion"));
+    if (sss !== null) {
+      userLoged();
+    }
+    console.log(sss);
+  }, 2000);
+}
+
+function userLoged(){
   $('.signUp-menu').hide();
   $('.login').hide();
   $('.logout').show();
   $('.updateUser').show();
-
 }
-function logout(){
+function logout() {
   $('.signUp-menu').show();
   // $('.alert-logout').show();
   $('.login').show();
@@ -21,17 +30,9 @@ function logout(){
 
 }
 
-$(function(){
-  $('#imagen').change( function(input){
-    var imagen = input.target.files[0];
-    if(imagen){
-      var leerImagen = new FileReader();
-      leerImagen.onload = function(input){
-        var resultadoImage = input.target.result;
-        $('#mostrarImagen').attr('src', resultadoImage);
-      }
-      $('#mostrarImagen').show();
-      leerImagen.readAsDataURL(imagen);
+$(function () {
+  var sss = JSON.parse(localStorage.getItem("sesion"));
+    if (sss !== null) {
+      userLoged();
     }
-  } )
 })
