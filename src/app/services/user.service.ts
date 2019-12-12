@@ -13,6 +13,7 @@ import { Observable } from 'rxjs'; //Recoge las respuestas que envía un servido
 
 export class UserService {
   url = 'http://localhost:4000/api/';
+  public identidad;
   constructor(
     private _http: HttpClient //Guarda el objeto httmCliente para poder tener acceso a los métodos get, post, put y delete
   ) { }
@@ -32,4 +33,38 @@ export class UserService {
     ).pipe(map(res => res));
 
   }
-}
+  //Crear  el metodo de IniciarSesion
+  iniciarSesion(usuarioLogueado){
+    let params = JSON.stringify(usuarioLogueado);
+    let options = {
+      headers: new HttpHeaders( 
+        {'Content-Type': 'application/json'} )
+    };
+    return this._http.post(
+      this.url + "loginUsuario", //localhost:4000/api/loginUsuario ->ruta back
+      params,
+      options
+    ).pipe(map(res => res));
+  }
+  //crear un metodo de obtención  de datos de nuestro usuario
+  obtenerNombreUsuario(){
+    //En un variable llamada identidad estamos recoogiendo los datos de inicio de sesion de nuestro usuario
+    //a partir de localStorage
+    let identidad = JSON.parse(localStorage.getItem('sesion'));
+
+    // validar  si localStorage esta vacio o si  contiene datos
+
+    if(identidad != "undefined"){
+      // si es diferente  de indefinido,  es decir , si existen datos  entonces
+      //Esta identidad va a ser igual a la variable  que trae  la sesion  de localStorage
+      this.identidad = identidad;
+    } else{
+      this.identidad = null;
+      }
+
+    return this.identidad;
+   }
+
+
+
+  }
